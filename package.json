@@ -11,8 +11,6 @@
     "watch-css": "nodemon -e scss -x \"npm run build-css\"",
     "bundle": "webpack",
     "bundle:w": "webpack --watch",
-    "typings": "typings",
-    "postinstall": "typings install",
     "predeploy": "npm run bundle",
     "lite": "lite-server",
     "start": "concurrent \"npm run bundle:w\" \"npm run watch-css\" \"npm run lite\"",

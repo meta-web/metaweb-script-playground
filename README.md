@@ -6,7 +6,7 @@ Using [metaweb-script](https://github.com/meta-web/metaweb-script) package.
 
 ## Usage
 
-**Build ** and open `index.html` file
+**Build** and open `index.html` file
 
 ```bash
 npm run build
