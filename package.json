@@ -40,6 +40,7 @@
   "dependencies": {
     "@types/react": "^15.0.27",
     "json-loader": "^0.5.4",
+    "metaweb-script": "^1.0.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "typescript": "^2.3.4"
