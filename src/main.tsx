@@ -11,6 +11,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+import _hljs = require('highlight.js');
+import _metascript = require('./ext/highlight.js/metascript.js');
+
+var hljs: any = _hljs;
+
+hljs.registerLanguage('metascript', _metascript);
+
 import {App} from './components/App';
 
 window.addEventListener("load", () => {

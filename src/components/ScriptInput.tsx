@@ -30,7 +30,7 @@ export class ScriptInput extends React.Component<IScriptInputProps,IScriptInputS
 		super(props);
 
 		this.state = {
-			source: "if(items@loaded,\n   items.0.name ~ ' is ' ~ abs(items.0.age - items.1.age)\n     ~ ' years ' ~ if(#item0.age > items.1.age, 'older', 'younger') ~ ' then ' ~ #item1.name,\n   'Not loaded!')"
+			source: "if(items$loaded,\n   items.0.name ~ ' is ' ~ abs(items.0.age - items.1.age)\n     ~ ' years ' ~ if(@item0.age > items.1.age, 'older', 'younger') ~ ' then ' ~ @item1.name,\n   'Not loaded!')"
 		};
 
 		this.setValue = this.setValue.bind(this);

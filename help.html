@@ -25,20 +25,21 @@
 <ul>
 <li>Data model consists of nodes</li>
 <li>Each node has an value and attributes</li>
-<li>Node can contain other nodes instead of values</li>
+<li>Node can contain other nodes instead of value</li>
 <li>Nodes can represent tree structure</li>
 <li>Written as JSON</li>
 </ul>
 <p><strong>NOTE:</strong> this tool uses data model mockup class for testing purposes. It’s not full-features META Web data model.</p>
 <h3><a id="Nodes_26"></a>Nodes</h3>
 <ul>
-<li>Node value is json property identified by <code>$</code> sign</li>
-<li>Child nodes are defined as json property identified by <code>_</code> char</li>
+<li>Node value is json property identified by <code>_</code> sign</li>
+<li>Child nodes and attributes are defined as direct json properties</li>
 <li>Node can has only value or child nodes, not both</li>
+<li>Attributes are child properties prefixed with <code>$</code> sign</li>
 </ul>
 <h3><a id="Attributes_32"></a>Attributes</h3>
 <p>Attributes works the same as nodes and can represent a tree structure as well.</p>
-<p>Node attributes are json propreties prefixed with <code>@</code> char.</p>
+<p>Node attributes are json propreties prefixed with <code>$</code> char.</p>
 <h3><a id="Example_38"></a>Example</h3>
 <pre><code class="language-json">{
     "<span class="hljs-attribute">@attribute1</span>": <span class="hljs-value"><span class="hljs-string">"value"</span></span>,

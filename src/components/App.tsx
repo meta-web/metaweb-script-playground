@@ -14,6 +14,7 @@ import * as ReactDOM from "react-dom";
 import {LogView} from './LogView';
 import {ScriptInput} from './ScriptInput';
 import {ModelView} from './ModelView';
+import {Help} from './Help';
 
 export interface IAppState {
 	showHelp: boolean;
@@ -68,9 +69,7 @@ export class App extends React.Component<{},IAppState> {
         		<ScriptInput onSubmit={this.hideHelp} />
         		<div className={"content-wrap"+ ( this.state.showHint ? " show-hint" : "" )}>
         			<LogView />
-		        	<div className={"help" + ( this.state.showHelp ? " show" : "" )}>
-		        		<iframe src="help.html" frameBorder="0" />
-		        	</div>
+		        	<Help className={"help" + ( this.state.showHelp ? " show" : "" )}></Help>
         		</div>
         	</div>
         </div>;

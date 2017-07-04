@@ -23,35 +23,23 @@ export class ModelStore extends EventEmitter {
 		super();
 
 		this.model = JSON.stringify({
-			"@doctype": "test.document",
-			"@attribute": "attrValue",
-			"@structAttr": {
-				_: {
-					"a": 1,
-					"b": 2
-				}
+			"$doctype": "test.document",
+			"$attribute": "attrValue",
+			"$structAttr": {
+				"a": 1,
+				"b": 2
 			},
-			_: {
-				count: {
-					$: 2
+			count: 2,
+			items: {
+				"$loaded": true,
+				0: {
+					"name": "John" ,
+					"age": 32
 				},
-				items: {
-					"@loaded": true,
-					_: {
-						0: {
-							_: {
-								"name": { "$": "John" },
-								"age": { "$": 32 }
-							}
-						},
-						1: {
-							_: {
-								"name": { "$": "Jack" },
-								"age": { "$": 23 }
-							}
-						},
-					}
-				}
+				1: {
+					"name": "Jack",
+					"age": 23
+				},
 			}
 		}, null, 4);
 
@@ -62,7 +50,7 @@ export class ModelStore extends EventEmitter {
 			"item1": [ "items", "1" ]
 		}, null, 4);
 		*/
-		this.placeholders = '{\n    "scope": [],\n    "item0": [ "items", "0" ],\n    "item1": [ "items", "1" ]\n}';
+		this.placeholders = '{\n    "scope": null,\n    "item0": "items.0",\n    "item1": "items.1"\n}';
 
 	}
 

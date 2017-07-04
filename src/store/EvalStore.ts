@@ -11,7 +11,7 @@
 import {default as ModelStore} from './ModelStore';
 import {default as LogStore} from './LogStore';
 
-import {Compiler, helpers, ModelMockup} from 'metaweb-script';
+import {Compiler, ModelMockup} from 'metaweb-script';
 
 export class EvalStore {
 
@@ -62,7 +62,25 @@ export class EvalStore {
 			entry.js = script.js;
 			entry.bindings = JSON.stringify(script.bindings, null, 4);
 
-			let res = script.executor.call(null, model, placeholders, helpers);
+			//Assign properties
+			let placeholdersMap = {};
+
+			for(let i in placeholders){
+
+				if(placeholders[i]){
+					
+					let ref = this.compiler.compilePropertyRef("#" + placeholders[i]);
+					placeholdersMap[i] = ref.executor.call(null, model.root, {});
+
+				} else {
+
+					placeholdersMap[i] = model.root;
+
+				}
+
+			}
+
+			let res = script.executor.call(null, model.root, placeholdersMap);
 
 			entry.result = JSON.stringify(res, null, 4);
 
